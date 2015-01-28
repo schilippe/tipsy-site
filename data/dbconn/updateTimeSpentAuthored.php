@@ -1,15 +1,5 @@
 
 <?php
-/*
-$myfile = fopen("/afs/csail.mit.edu/proj/tipsy/www/data/test/newfile.txt", "w");
-
-print_r(error_get_last());
-$userId = $_POST["userId"];
-$totalTime = $_POST["time"];
-fwrite($myfile, $userId);
-fclose($myfile);
-
-*/
 
 $userId = $_POST["userId"];
 $totalTime = $_POST["time"];
