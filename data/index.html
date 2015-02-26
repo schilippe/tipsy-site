@@ -66,6 +66,10 @@
                         <a href="#screenshots">Screenshots</a>
                     </li>
                     <li class="page-scroll">
+                        <a href="#getting_paid">Developers</a>
+                    </li>
+
+                    <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -161,6 +165,54 @@
             </div>
         </div>
     </section>
+
+
+    <section id="getting_paid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Getting Paid</h2>
+                    <hr class="heart-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>If you are a developer you can start getting paid right away. All you need to do is include a
+                       <code>link</code> tag in the <code>head</code> of your site with a <code>rel="author"</code> and <code>
+                       name="Tipsy"</code> You can then include the payment processors with whom you would accept payment.
+		       You would insert something looking like this:
+		 </p>
+		<p>
+		    <center>
+		        <code> &ltlink rel="author" name="Tipsy" paypal="tipsy@haystack.com"&gt</code>
+                    </center>	
+		</p>
+		<p> After you do this, any user who has Tipsy installed will automatically be generating payments based on browsing
+                    activity on your site! For particular payment processors Tipsy uses different formats:
+		    <ul>
+		        <li><h4 style="display:inline">PayPal:</h4> For now, just include your PayPal email address, just like in the example above.
+					    We are working on another method.
+			</li>
+			<li><h4 style="display:inline">Dwolla:</h4> In order to accept Dwolla payments you will need to include your
+					     key in the <code> author </code> tag. In order to generate this key you need
+					     to create an account with <a href="https://www.dwolla.com/Register">dwolla</a>. Then
+					     you need to <a href="https://www.dwolla.com/applications"> generate a button</a>. Don't 
+					     worry too much about all the different fields or button types - it doesn't matter since
+					     all we need is the key. Once you've created the button, go back to 
+					     <a href="https://www.dwolla.com/applications">this page</a>. There, you should see your
+                                             key. This is the key that would be in any button you place on a website, that would be
+                                             visible to anyone. You can then include this as an attribute in the <code>link</code> 
+				             tag described above like so: <code>dwolla="kRrCD32hkwH0E7ldn/xeI/WCQKqR2dVPLuQjF6Bu/g4OlMnZa9"</code>.   
+			</li>
+		    </ul>
+		</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 
     <!-- Contact Section -->
     <section id="contact">
