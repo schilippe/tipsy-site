@@ -284,7 +284,7 @@ section.success {
 .floating-label-form-group textarea {
     z-index: 1;
     position: relative;
-    padding-right: 0;
+    padding-right: 1;
     padding-left: 1;
     border: 1;
     border-radius: 1;
@@ -457,9 +457,9 @@ footer .footer-below {
   margin-right: 0 !important;
 }
 
-body {
+/*body {
     overflow-y: scroll;
-}
+}*/
 
 .centerize { 
     text-align: center;
@@ -479,7 +479,7 @@ body {
 .floating-label-form-group-modal textarea {
     z-index: 1;
     position: relative;
-    padding-right: 0;
+    padding-right: 1;
     padding-left: 1;
     border: 1;
     border-radius: 1;
