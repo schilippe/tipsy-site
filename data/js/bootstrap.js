@@ -958,10 +958,10 @@ if (typeof jQuery === 'undefined') {
 
     this.isShown = true
 
-    this.checkScrollbar()
+    //this.checkScrollbar()
     this.$body.addClass('modal-open')
 
-    this.setScrollbar()
+    //this.setScrollbar()
     this.escape()
 
     this.$element.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
@@ -1051,7 +1051,7 @@ if (typeof jQuery === 'undefined') {
     this.$element.hide()
     this.backdrop(function () {
       that.$body.removeClass('modal-open')
-      that.resetScrollbar()
+      //that.resetScrollbar()
       that.$element.trigger('hidden.bs.modal')
     })
   }

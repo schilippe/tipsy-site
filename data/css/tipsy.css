@@ -452,3 +452,16 @@ footer .footer-below {
     display: none;
     opacity: 0;
 }
+
+.modal-open, .modal-open .navbar-fixed-top {
+  margin-right: 0 !important;
+}
+
+body {
+    overflow-y: scroll;
+}
+
+.centerize { 
+    text-align: center;
+    margin-left: 175px;
+}
