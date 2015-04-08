@@ -8,12 +8,21 @@ body {
     overflow-x: hidden;
 }
 
-p {
+p, center, ul, il, div.block {
     font-size: 20px;
+}
+
+div.block{
+    border:1px;
+    border-style:groove;
 }
 
 p.small {
     font-size: 16px;
+}
+
+span.fade {
+    opacity: 0.5;
 }
 
 a,

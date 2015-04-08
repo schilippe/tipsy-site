@@ -10,8 +10,8 @@
     <meta name="author" content="">
     
     <!-- Tipsy author format !-->
-    <link rel="author" name="Tipsy" gravatar="tipsy@csail.mit.edu" data-paypal="tipsy@haystack.com" data-bitcoin="56aa4626057f4e415444b373f5f9d6aa" data-dwolla="kRrCD32hkwH0E7ldn/xeI/WCQKqR2dVPLuQjF6Bu/g4OlMnZa9">
-
+    <!-- <link rel="author" name="Tipsy" gravatar="tipsy@csail.mit.edu" data-paypal="tipsy@haystack.com" data-bitcoin="56aa4626057f4e415444b373f5f9d6aa" data-dwolla="kRrCD32hkwH0E7ldn/xeI/WCQKqR2dVPLuQjF6Bu/g4OlMnZa9">
+	!-->
     <title>Tipsy</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
@@ -106,7 +106,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <p>Tipsy is a browser extension that will allow you to support online content. Just install the app and keep browsing as you always do. Tipsy will then remind you to donate to the creators of the content you like, giving more to the ones you liked the best. </p>
+                    <p>Tipsy is a Chrome browser extension that will allow you to support online content. Just install the app and keep browsing as you always do. Tipsy will then remind you to donate to the creators of the content you like, giving more to the ones you liked the best. </p>
                 </div>
 <!--                 <div class="col-lg-4">
                     <p>Tipsy is currently in testing mode. If you would like to try it out please contact us with the form below. If you are approved, come back and use the link below to install it. Tipsy is for now only available on Google Chrome.</p>
@@ -181,7 +181,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>If you create content you can start getting paid right away. All you need to do is include a
+		    <h3>link tag</h3>
+                    <p>If you create content you can start getting paid right away. One way to get paid is to include a
                        <code>link</code> tag in the <code>head</code> of your site with <code>rel="author"</code> and <code>
                        name="Tipsy"</code> attributes. You can then include the payment processors with whom you would accept payment.
 		                    You would insert something looking like this:
@@ -209,7 +210,67 @@
 			              </li>
 		             </ul>
 		            </p>
-                </div>
+			<h3>tipsy.txt</h3>
+			<p>Another way to get paid is to include a <code>tipsy.txt</code> file 
+			   in the root of your domain. This file is similar in spirit to the
+	 	           common <code>robots.txt</code> and can be read by Tipsy to learn
+			   about how you accept payments. You can also specify optional 
+			   authorship information. Even though <code>tipsy.txt</code> would
+			   be placed at the root of your domain you can specify different 
+                           payment properties for different sub-domains. The format is as
+			   follows:			
+			<p>
+			Line 1 : <samp>[version-nr]</samp><br>
+			Line 2 : <samp>[cache duration-amount] [cache duration unit]</samp><br>
+			Line 3+: <samp>[url prefix] [payment processor 1]=[info for payment processor 1]|[payment processor 2]=[info for payment processor 2] [authorship info]
+			</p>
+			<h4>Line 1: Version Nr</h4>
+			<p> The version number is used by Tipsy to decide what format
+			    version is being used. The current version nr. is <samp>0.0.1</samp>.
+			</p>
+			<h4>Line 2: Cache Duration</h4>
+			<p>
+			Tipsy will remember the <code>tipsy.txt</code> information since accessing it
+			takes time. After a specified time, Tipsy will fetch the information again.
+			You choose this time by choosing a <var>cache duration amount</var> (any integer number) 
+			and a <var>cache duration unit</var> which is <samp>h</samp>, <samp>d</samp> or <samp>w</samp> (hour, day or week).
+			Make sure to leave a space between the amount and the unit. For example, if you want Tipsy to fetch the <code>tipsy.txt</code>
+			information after 5 hours you would place  <samp>5 h</samp> in the second line.
+                	</p>
+			<h4>Line 3+: Payment Information</h4>
+			<p>
+			From line 3 and on you can place the payment information that apply to your content.
+			The first entry, <samp>[url prefix]</samp>, you place on the line is the url prefix of the page your content is on. For example, of you site is <code>www.abc.com
+			</code> and you have content on <code>www.abc.com/mycontent.html</code>, you would
+			place <samp>mycontent.html</samp> as the first entry of the third line. If you don't 
+			want to specify the sub-domains you should place a <samp>*</samp> for <samp>[url prefix]</samp> on line 3.<br>
+			The next entry lets you specify the payment processors and their information. For <samp>[payment processor 1]</samp> you could have <samp>paypal</samp> and for 
+			<samp>[info for payment processor 1]</samp> you could have your paypal email. Remember to place the "=" sign between them. You could place multiple payment 
+			processors and their respective inforamtion, just make sure to separate them by a "|".
+			The last entry, <samp>[authorship info]</samp> is optional and lets you specify a name or other indentifier. You are free to place whatever you wish. Make sure to 
+			keep a space between it and the last <samp>[info for payment processor]</samp>.<br>
+			You can specify as many different sub-domains as you need by just adding lines.
+
+			</p>
+			<p>Here is an example of a <code>tipsy.txt</code> page:<br>
+			<div class="block">
+			<samp>
+			<span class="fade">1:</span>0.0.1<br>
+			<span class="fade">2:</span>3 d<br>
+			<span class="fade">3:</span>* paypal=tipsy@paypal.com|dwolla=kRrCD32hkwH0E7ldn/xeI/WCQKqR Philippe<br>
+			<span class="fade">4:</span>test.html paypal=tipsy2@paypal.com Tim
+			</samp>
+			</div>
+			<p>&nbsp;</p>
+			<p>
+			Make sure you follow the format carefully. Line 1 starts at the top
+			of your <code>tipsy.txt</code>. Leave a single space between each of the fields
+			and don't forget the "=" and "|" signs for the payment information.
+			</p>
+			<p>
+			To find your dwolla key follow the instructions in the previous section.
+			</p>
+		</div>
             </div>
         </div>
     </section>
@@ -272,7 +333,10 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>From</h3>
-                        <p>Haystack Lab<br>MIT CSAIL</p>
+			<p>Prof. D. Karger | Philippe Schiff<br>
+                        <a href"http://haystack.csail.mit.edu/">Haystack Group</a><br>MIT CSAIL</p>
+			<p>Tim Branyen<br>
+			<a href="http://bocoup.com/">bocoup</a></p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Pay With...more to come</h3>
