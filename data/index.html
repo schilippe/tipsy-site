@@ -184,12 +184,12 @@
 		    <h3>link tag</h3>
                     <p>If you create content you can start getting paid right away. One way to get paid is to include a
                        <code>link</code> tag in the <code>head</code> of your site with <code>rel="author"</code> and <code>
-                       name="Tipsy"</code> attributes. You can then include the payment processors with whom you would accept payment.
+                       name="John Smith"</code> attributes. You can then include the payment processors with whom you would accept payment.
 		                    You would insert something looking like this:
 		               </p>
 		               <p>
 		                <center>
-		                  <code> &ltlink rel="author" name="Tipsy" data-paypal="tipsy@haystack.com"&gt</code>
+		                  <code> &ltlink rel="author" name="John Smith" data-paypal="john@smith.com"&gt</code>
                     </center>	
 		              </p>
 		              <p> After you do this, any user who has Tipsy installed will automatically be generating payments based on browsing
@@ -210,6 +210,7 @@
 			              </li>
 		             </ul>
 		            </p>
+              <p> The <code>name</code> attribute is optional. It lets you choose how you would like Tipsy users to identify you. It does not have to be you real name. It can also be the name of your company or organization.</p>
 			<h3>tipsy.txt</h3>
 			<p>Another way to get paid is to include a <code>tipsy.txt</code> file 
 			   in the root of your domain. This file is similar in spirit to the
@@ -222,7 +223,7 @@
 			<p>
 			Line 1 : <samp>[version-nr]</samp><br>
 			Line 2 : <samp>[cache duration-amount] [cache duration unit]</samp><br>
-			Line 3+: <samp>[url prefix] [payment processor 1]=[info for payment processor 1]|[payment processor 2]=[info for payment processor 2] [authorship info]
+			Line 3 and on: <samp>[url prefix] [payment processor 1]=[info for payment processor 1]|[payment processor 2]=[info for payment processor 2] [authorship info]
 			</p>
 			<h4>Line 1: Version Nr</h4>
 			<p> The version number is used by Tipsy to decide what format
@@ -237,7 +238,7 @@
 			Make sure to leave a space between the amount and the unit. For example, if you want Tipsy to fetch the <code>tipsy.txt</code>
 			information after 5 hours you would place  <samp>5 h</samp> in the second line.
                 	</p>
-			<h4>Line 3+: Payment Information</h4>
+			<h4>Line 3 and on: Payment Information</h4>
 			<p>
 			From line 3 and on you can place the payment information that apply to your content.
 			The first entry, <samp>[url prefix]</samp>, you place on the line is the url prefix of the page your content is on. For example, of you site is <code>www.abc.com
@@ -247,7 +248,7 @@
 			The next entry lets you specify the payment processors and their information. For <samp>[payment processor 1]</samp> you could have <samp>paypal</samp> and for 
 			<samp>[info for payment processor 1]</samp> you could have your paypal email. Remember to place the "=" sign between them. You could place multiple payment 
 			processors and their respective inforamtion, just make sure to separate them by a "|".
-			The last entry, <samp>[authorship info]</samp> is optional and lets you specify a name or other indentifier. You are free to place whatever you wish. Make sure to 
+			The last entry, <samp>[authorship info]</samp> is optional and lets you specify some information to indetify yourself to the user, eg. your name or the name of your organization. You are free to place whatever you wish. Make sure to 
 			keep a space between it and the last <samp>[info for payment processor]</samp>.<br>
 			You can specify as many different sub-domains as you need by just adding lines.
 
@@ -333,8 +334,8 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>From</h3>
-			<p>Prof. D. Karger | Philippe Schiff<br>
-                        <a href"http://haystack.csail.mit.edu/">Haystack Group</a><br>MIT CSAIL</p>
+			<p><a href="//people.csail.mit.edu/karger">Prof. D. Karger</a> | Philippe Schiff<br>
+                        <a href="http://haystack.csail.mit.edu/">Haystack Group</a><br>MIT CSAIL</p>
 			<p>Tim Branyen<br>
 			<a href="http://bocoup.com/">bocoup</a></p>
                     </div>
