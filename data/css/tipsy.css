@@ -539,3 +539,16 @@ form .row:first-child .floating-label-form-group {
     display: inline-block;
     vertical-align: top;
 }*/
+.alert {
+   height:40%;    
+}
+
+code {
+  font-size:18px;
+}
+
+.myCopyBtn {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}

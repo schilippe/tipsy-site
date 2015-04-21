@@ -106,6 +106,7 @@
         </div>
       </div>
     </section>
+        <hr>
     <!-- screenshots Grid Section -->
     <section id="screenshots">
       <div class="container">
@@ -150,6 +151,9 @@
         </div>
       </div>
     </section>
+    
+        <hr>
+    
     <section id="getting_paid">
       <div class="container">
         <div class="row">
@@ -170,8 +174,6 @@
           <div class="col-sm-6 text-right">
             <form name="sentMessages" id="contactForms" novalidate>
               <div class="row control-group">
-                <!-- </div> -->
-                <!-- <div class="row control-group"> -->
                 <div class="form-group col-xs-12 floating-label-form-group-modal controls">
                   <input type="email" class="form-control" placeholder="Gmail Address" id="emailspub" required data-validation-required-message="Please enter your email address.">
                   <p class="help-block text-danger text-left"></p>
@@ -213,7 +215,7 @@
               <li>
                 <h4 style="display:inline">Dwolla:</h4>
                 In order to accept Dwolla payments you will need to include your
-                key in the <code> author </code> tag. In order to generate this key you need
+                key in the <code>author</code> tag. In order to generate this key you need
                 to create an account with <a href="https://www.dwolla.com/Register">dwolla</a>. Then
                 you need to <a href="https://www.dwolla.com/applications"> generate a button</a>. Don't 
                 worry too much about all the different fields or button types - it doesn't matter since
@@ -226,13 +228,22 @@
             </ul>
             </p>
             <p> The <code>name</code> attribute is optional. It lets you choose how you would like Tipsy users to identify you. It does not have to be you real name. It can also be the name of your company or organization.</p>
+            
+            <h5>Generate the Link Tag</h5>
+            <p> We can produce the <code>link</code> tag for you so that all you need to do is paste in to your site! Click in the button below:</p>
+            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#linkTagGenerator">
+            Link Tag Generator
+            </button>
+            <hr>
+            
+            
             <br>
             <h4>tipsy.txt</h4>
-            <p>Another way to get paid is to include a <code>tipsy.txt</code> file 
+            <p>Another way to get paid is to include a <samp>tipsy.txt</samp> file 
               in the root of your domain. This file is similar in spirit to the
               common <code>robots.txt</code> and can be read by Tipsy to learn
               about how you accept payments. You can also specify optional 
-              authorship information. Even though <code>tipsy.txt</code> would
+              authorship information. Even though <samp>tipsy.txt</samp> would
               be placed at the root of your domain you can specify different 
               payment properties for different sub-domains. The format is as
               follows:			
@@ -247,11 +258,11 @@
             </p>
             <h4>Line 2: Cache Duration</h4>
             <p>
-              Tipsy will remember the <code>tipsy.txt</code> information since accessing it
+              Tipsy will remember the <samp>tipsy.txt</samp> information since accessing it
               takes time. After a specified time, Tipsy will fetch the information again.
               You choose this time by choosing a <var>cache duration amount</var> (any integer number) 
               and a <var>cache duration unit</var> which is <samp>h</samp>, <samp>d</samp> or <samp>w</samp> (hour, day or week).
-              Make sure to leave a space between the amount and the unit. For example, if you want Tipsy to fetch the <code>tipsy.txt</code>
+              Make sure to leave a space between the amount and the unit. For example, if you want Tipsy to fetch the <samp>tipsy.txt</samp>
               information after 5 hours you would place  <samp>5 h</samp> in the second line.
             </p>
             <h4>Line 3 and on: Payment Information</h4>
@@ -268,7 +279,7 @@
               keep a space between it and the last <samp>[info for payment processor]</samp>.<br>
               You can specify as many different sub-domains as you need by just adding lines.
             </p>
-            <p>Here is an example of a <code>tipsy.txt</code> page:<br>
+            <p>Here is an example of a <samp>tipsy.txt</samp> page:<br>
             <div class="block">
               <samp>
               <span class="fade">1:</span>0.0.1<br>
@@ -280,7 +291,7 @@
             <p>&nbsp;</p>
             <p>
               Make sure you follow the format carefully. Line 1 starts at the top
-              of your <code>tipsy.txt</code>. Leave a single space between each of the fields
+              of your <samp>tipsy.txt</samp>. Leave a single space between each of the fields
               and don't forget the "=" and "|" signs for the payment information.
             </p>
             <p>
@@ -290,6 +301,8 @@
         </div>
       </div>
     </section>
+    
+    <hr>
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
@@ -301,8 +314,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
-            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+
             <form name="sentMessage" id="contactForm" novalidate>
               <div class="row control-group">
                 <div class="form-group col-xs-12 floating-label-form-group controls">
@@ -487,10 +499,10 @@
             <p>Else you can try out Tipsy by joining the Tipsy Users Google Group. Enter your email and click on the button below to join. Once you've joined and been approved, you can try the download button again.</p>
             <form name="sentMessages" id="contactForms" novalidate>
               <div class="row control-group">
-                <div class="form-group col-xs-12 floating-label-form-group-modal controls">
-                  <label>Gmail Address</label>
-                  <input type="email" class="form-control" placeholder="Gmail Address" id="emails" required data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
+<div class="form-group col-xs-6 floating-label-form-group-modal controls">
+                    <label>Gmail Address</label>
+                    <input type="email" class="form-control" placeholder="Gmail Address" id="emails" required data-validation-required-message="Please enter your email address.">
+                    <p class="help-block text-danger"></p>
                 </div>
               </div>
               <br>
@@ -504,6 +516,46 @@
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- link tag generator modal -->
+    <div class="modal fade" id="linkTagGenerator" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Generate Link Tag</h4>
+          </div>
+          <div class="modal-body">
+            <p>Use this form to generate the Link Tag.</p>
+            
+            <form class="form-horizontal span12" >
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="linkTagName">Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="linkTagName" placeholder="John Smith">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="payPalEmail">Paypal Email</label>         <div class="col-sm-9">
+                  <input type="email" class="form-control" id="payPalEmail" placeholder="jsmith@paypal.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="dwollaKey">Dwolla Key</label>               <div class="col-sm-9">
+                  <input type="text" class="form-control" id="dwollaKey" placeholder="kRrCD32hkwH0E7ldn/xeI/WCQKqR2dVPLuQjF6Bu/g4OlMnZa9">
+                </div>
+              </div>
+            </form>
+            
+            <button type="button" class="btn btn-primary" id="linkTagGenerateBtn">Generate</button>
+            <hr>
+            <div id="placeFollowing"></div>
+            <div id="generatedLinkTag" class="text-center"></div>
+            <div id="noData"></div>
           </div>
         </div>
       </div>
