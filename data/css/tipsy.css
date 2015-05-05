@@ -552,3 +552,6 @@ code {
   background-color: #fff;
   border-color: #ccc;
 }
+.pl {
+  float: right;
+}
