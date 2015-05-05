@@ -93,15 +93,46 @@
                      the ones you liked the best.
                   </p>
                </div>
-               <!--                 <div class="col-lg-4">
-                  <p>Tipsy is currently in testing mode. If you would like to try it out please contact us with the form below. If you are approved, come back and use the link below to install it. Tipsy is for now only available on Google Chrome.</p>
-                  </div> -->
+
                <div class="col-lg-8 col-lg-offset-2 text-center" id="downloadBtn">
-                  <!--                    <a href="https://chrome.google.com/webstore/detail/tipsy/omlkgkpbhjalgfbjbdmpcgapimhaafhp" class="btn btn-lg btn-outline">
-                     <i class="fa fa-download"></i> Download Tipsy
-                     </a> -->
+
                   <br />
                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Download Tipsy</button>
+               </div>
+            </div>
+         </div>
+         <!--Why tipsy section-->
+      </section>
+      <hr/>
+      <section id="why_tipsy">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 text-center">
+                  <h2>Why Tipsy?</h2>
+                  <hr class="heart-primary" />
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="row">
+                     <div class="col-lg-12 text-left">
+                        <h3><span class="glyphicon glyphicon-ok why" id="linkPlus" aria-hidden="true" style="color:#1ABC9C"></span> Free</h3>
+                        <p>Tipsy is completely free of charge to both readers and content creators. There are no fees or any other payments. 
+                        </p>
+                        <h3><span class="glyphicon glyphicon-ok why" id="linkPlus" aria-hidden="true" style="color:#1ABC9C"></span> Easy</h3>
+                        <p>All the user needs to do is keep browsing as usual. Once in a while Tipsy will remind the user to make a payment.
+                        </p>
+                        <h3><span class="glyphicon glyphicon-ok why" id="linkPlus" aria-hidden="true" style="color:#1ABC9C"></span> Private</h3>
+                        <p>Tipsy is completely private. There is no Tipsy server where all the user's browsing data is stored nor does Tipsy identify users. All the user's information remains with them in their browser.
+                        </p>
+                        <h3><span class="glyphicon glyphicon-ok why" id="linkPlus" aria-hidden="true" style="color:#1ABC9C"></span> Fair</h3>
+                        <p>Tipsy will proportionally distribute the payments fairly among all the content creators whose content was consumed. The user's entire payment is used to pay the content creators.
+                        </p>
+                        <h3><span class="glyphicon glyphicon-ok why" id="linkPlus" aria-hidden="true" style="color:#1ABC9C"></span> Transparent</h3>
+                        <p>Tipsy is completely transparent to both users and content creators. Tipsy doesn't have any hidden side effects and all the code is <a href="https://github.com/haystack/tipsy">open source</a>. Tipsy will not hold any payments - payments are processed through PayPal or Dwolla payment sessions through which the user pays the content creators directly.
+                        </p>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
@@ -146,6 +177,8 @@
          </div>
       </section>
       <hr />
+
+      <!--Publishers section-->
       <section id="getting_paid">
          <div class="container">
             <div class="row">
@@ -190,7 +223,8 @@
                   <div class="row">
                      <div class="col-lg-12 text-left">
                         <h3>Getting Paid</h3>
-                        <p> To get paid, you need a Paypal or <a href="https://www.dwolla.com/">Dwolla</a> account that can receive money. Then you need to tell Tipsy about it using one of two ways: by putting a tipsy.txt file on your web site or by adding a link tag in the head of each page you publish.</p>
+                        <p> To get paid, you need a Paypal or <a href="https://www.dwolla.com/">Dwolla</a> account that can receive money. Then you can tell Tipsy about it in one of two ways: by putting a <samp>tipsy.txt</samp> file on your web site or by adding a <samp>link</samp> tag in the head of each page you publish.</p> 
+                        <p> To use PayPal you just need your paypal email. For dwolla you need to <a href="#" data-toggle="modal" data-target="#dwollaKeyInfo">get a key</a>.
                      </div>
                   </div>
                   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -206,82 +240,10 @@
                            <div class="panel-body">
                               <p>One way to get paid is to include a 
                                  <samp>tipsy.txt</samp> file in the root of your domain. This file is similar in spirit to the common 
-                                 <code>robots.txt</code> and can be read by Tipsy to learn about how you accept payments. Even though 
-                                 <samp>tipsy.txt</samp> would be placed at the root of your domain you can specify different payment properties for
-                                 different sub-domains. You can just click the next to fill out a form and have us generate the button for you.
+                                 <samp>robots.txt</samp> and can be read by Tipsy to learn about how you accept payments. You can also specify different payment properties for your different sub-domains. Click on the following button to generate your tipsy.txt file.
                                  </p><button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#txtGenerator">Generate tipsy.txt</button>
-                                 <hr>
-                                 <p>The tipsy.txt file uses the following format:
-                              </p>
-                              <p>version:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;[version number]<br/>
-                                 cache-duration:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;[cache duration-amount]  [cache duration unit]<br/>
-                                 payment-methods:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;[url-prefix 1]:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[payment processor 1]: [info for payment processor 1]<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[payment processor 2]: [info for payment processor 2]<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;[url-prefix 2]:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[payment processor 1]: [info for payment processor 1]<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[payment processor 2]: [info for payment processor 2]<br/>
-                                 ...
-                              </p>
-                              <h4>
-                                 <samp>version</samp>
-                              </h4>
-                              <p>
-                                 The version number is used by Tipsy to decide what format version is being used. The current version nr. is 
-                                 <samp>0.0.2</samp>.</samp>
-                              </p>
-                              <h4><samp>Cache Duration</samp></h4>
-                              <p>Tipsy will remember the 
-                                 <samp>tipsy.txt</samp> information since accessing it takes time. After the specified duration, Tipsy will fetch the
-                                 information again. You choose this time by choosing a 
-                                 [cache duration amount] (any integer number) and a 
-                                 [cache duration unit] which is 
-                                 <samp>h</samp>, 
-                                 <samp>d</samp> or 
-                                 <samp>w</samp> (hour, day or week). For example, if you want
-                                 Tipsy to fetch the 
-                                 <samp>tipsy.txt</samp> information after 5 hours you would place 
-                                 <samp>5 h</samp> under the cache-duration heading.
-                              </p>
-                              <h4><samp>Payment methods</samp></h4>
-                              <p>Under this heading, you can place the payment information. The first entry, 
-                                 [url prefix], you place is the url prefix of the page your content is on. For example, of your
-                                 site is 
-                                 <code>www.abc.com</code> and you have content on 
-                                 <code>www.abc.com/mycontent.html</code>, you would place 
-                                 <samp>mycontent.html</samp> as the [url-prefix]. If you don&#39;t want to specify the sub-domains you
-                                 should place a 
-                                 <samp>_</samp> for 
-                                 [url prefix] instead.
-                                 <br />For each [url-prefix] you can specify the payment processors and their information. For 
-                                 [payment processor 1] you could have 
-                                 "paypal" and for 
-                                 [info for payment processor 1] you could have your paypal email. You can specify as many different sub-domains as you need.
-                              </p>
-                              <p>Here is an example of a 
-                                 <samp>tipsy.txt</samp> page:
-                                 <br />
-                              </p>
-                              <div class="block">
-                                 <samp>
-                                 version:<br/>
-                                 &nbsp;&nbsp;&nbsp;0.0.1<br/>
-                                 cache-duration:<br/>
-                                 &nbsp;&nbsp;&nbsp;3 d<br/>
-                                 payment-methods:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;mysite.html:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paypal: me@mail.com<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: kRrCD32hkwH0E7ldn/xeI/WCQKqR <br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;_:<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paypal:someone@else.com<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: H0E7ldH0E7ldKqR/KqRD32hkw <br/>
-                                 </samp>
-                              </div>
-                              <p>All you need to make sure is to have the colons at the end of each heading and keep the indentation levels consistent. 
-                              <p>To find your dwolla key follow <a href="#" data-toggle="modal" data-target="#dwollaKeyInfo">these</a> instructions.</p>
+                                 <br/>
+                                 <p><a href="#" data-toggle="modal" data-target="#txtFormatInfo">Learn more</a> about the tipsy.txt format.</p>
                            </div>
                         </div>
                      </div>
@@ -297,9 +259,9 @@
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                            <div class="panel-body">
 
-                              <p>Another way to get paid is to inlclude a
-                                 <code>link</code> tag in the 
-                                 <code>head</code> of your site with 
+                              <p>Another way to get paid is to include a
+                                 <samp>link</samp> tag in the 
+                                 <samp>head</samp> of your site with 
                                  <code>rel=&quot;author&quot;</code> and 
                                  <code>name=&quot;John Smith&quot;</code> attributes. You can then include the payment processors with whom you would
                                  accept payment. You would insert something looking like this:
@@ -307,15 +269,8 @@
                               <center>
                                  <code>&lt;link rel=&quot;author&quot; name=&quot;John Smith&quot; data-paypal=&quot;john@smith.com&quot;&gt;</code>
                               </center>
-                              <p>After you do this, any user who has Tipsy installed will automatically be generating payments based on browsing
-                                 activity on your site. You can either put your PayPal email address or your dwolla key. Click <a href="#" data-toggle="modal" data-target="#dwollaKeyInfo">here</a> to learn how to get your dwolla key.
-                              <p>The 
-                                 <code>name</code> attribute is optional. It lets you choose how you would like Tipsy users to identify you. It does not
-                                 have to be you real name. It can also be the name of your company or organization.
-                              </p>
-                              <h5>Generate the Link Tag</h5>
-                              <p>We can produce the 
-                                 <code>link</code> tag for you so that all you need to do is paste it into your site! Click on the button below:
+                              <br/>
+                              <p>Click on the button below to generate the <samp>link</samp> tag:
                               </p>
                               <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#linkTagGenerator">Generate Link Tag</button>
 
@@ -330,9 +285,9 @@
                   <div class="row">
                      <div class="col-lg-12 text-left">
                         <h3>Detecting Tipsy</h3>
-                        <p>In order to allow you to encourage readers to install Tipsy we provide a simple library that will detect whether a
+                        <p>To allow you to encourage readers to install Tipsy we provide a simple library that will detect whether a
                            reader has Tipsy enabled. This way you can place an indicator on your site to remind users that they can support your
-                           content through Tipsy. In order to do that just load the following script into your site:
+                           content through Tipsy. Just load the following script into your site:
                         </p>
                         <center>
                            <code>&lt;script
@@ -725,10 +680,92 @@
                   <center>
                      <code>data-dwolla=&quot;kRrCD32hkwH0E7...Bu/g4OlMnZa9&quot;</code>.
                   </center>
-                  <hr />
-                  <div id="placeFollowing"></div>
-                  <div id="generatedLinkTag" class="text-center"></div>
-                  <div id="noData"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      
+      <!-- tipsy.txt format info modal-->
+            <div class="modal fade" id="txtFormatInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">x</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">tipsy.txt format</h4>
+               </div>
+               <div class="modal-body">
+                  <p>The tipsy.txt file uses the following format:
+                              </p>
+                              <p>version:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;[version number]<br/>
+                                 cache-duration:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;[cache duration amount]  [cache duration unit]<br/>
+                                 payment-methods:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;[url-prefix 1]:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[processor 1]: [info processor 1]<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[processor 2]: [info processor 2]<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;[url-prefix 2]:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[processor 1]: [info processor 1]<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[processor 2]: [info processor 2]<br/>
+                                 ...
+                              </p>
+                              <h4>
+                                 <samp>version</samp>
+                              </h4>
+                              <p>
+                                 The version number is used by Tipsy to decide what format version is being used. The current version nr. is 
+                                 <samp>0.0.2</samp>.</samp>
+                              </p>
+                              <h4><samp>Cache Duration</samp></h4>
+                              <p>Tipsy will fetch the 
+                                 <samp>tipsy.txt</samp> information with a frequency specified by this duration. The 
+                                 [cache duration amount] is any integer number and the 
+                                 [cache duration unit] is 
+                                 <samp>h</samp>, 
+                                 <samp>d</samp> or 
+                                 <samp>w</samp> (hour, day or week). For example, if you want
+                                 Tipsy to fetch the 
+                                 <samp>tipsy.txt</samp> information after 5 hours you would place 
+                                 <samp>5 h</samp> under the cache-duration heading.
+                              </p>
+                              <h4><samp>Payment methods</samp></h4>
+                              <p>Under this heading, you can place the payment information. The first entry, 
+                                 [url prefix], you place is the url prefix of the page your content is on. For example, of your
+                                 site is 
+                                 <code>www.abc.com</code> and you have content on 
+                                 <code>www.abc.com/mycontent.html</code>, you would place 
+                                 <samp>mycontent.html</samp> as the [url-prefix]. If you don&#39;t want to specify the sub-domains you
+                                 should place a 
+                                 <samp>_</samp> for 
+                                 [url prefix] instead.
+                                 <br />For each [url-prefix] you can specify the payment processors and their information. For 
+                                 [processor 1] you could have 
+                                 "paypal" and for 
+                                 [info for processor 1] you could have your paypal email. You can specify as many different sub-domains as you need.
+                              </p>
+                              <p>Here is an example of a 
+                                 <samp>tipsy.txt</samp> page:
+                                 <br />
+                              </p>
+                              <div class="block">
+                                 <samp>
+                                 version:<br/>
+                                 &nbsp;&nbsp;&nbsp;0.0.1<br/>
+                                 cache-duration:<br/>
+                                 &nbsp;&nbsp;&nbsp;3 d<br/>
+                                 payment-methods:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;mysite.html:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paypal: me@mail.com<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: kRrCD32hkwH0E7ldn/xeI/WCQKqR <br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;_:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paypal:someone@else.com<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: H0E7ldH0E7ldKqR/KqRD32hkw <br/>
+                                 </samp>
+                              </div>
+                              <p>All you need to make sure is to have the colons at the end of each heading and keep the indentation levels consistent. 
                </div>
             </div>
          </div>
