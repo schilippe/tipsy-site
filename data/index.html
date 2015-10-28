@@ -46,19 +46,21 @@
                      <a href="#page-top"></a>
                   </li>
                   <li class="page-scroll">
-                     <a href="#about">Readers</a>
+                     <a href="#readers">Readers</a>
+                  </li>
+                  <li class="page-scroll">
+                     <a href="#getting_paid">Publishers</a>
                   </li>
                   <li class="page-scroll">
                      <a href="#screenshots">Screenshots</a>
-                  </li>
-                  <li class="page-scroll">
-                     <a href="#getting_paid">Content Creators</a>
                   </li>
                   <li class="page-scroll">
                      <a href="#faq">FAQ</a>
                   </li>
                   <li class="page-scroll">
                      <a href="#contact">Contact</a>
+                  <li class="page-scroll">
+                     <a href="#about">About</a>
                   </li>
                </ul>
             </div>
@@ -80,8 +82,8 @@
             </div>
          </div>
       </header>
-      <!-- About Section -->
-      <section class="success" id="about">
+      <!-- Readers Section -->
+      <section class="success" id="readers">
          <div class="container">
             <div class="row">
                <div class="col-lg-12 text-center">
@@ -134,7 +136,8 @@
                         <h3><span class="glyphicon glyphicon-ok why" aria-hidden="true" style="color:#1ABC9C"></span> Easy for Publishers</h3>
                         <p>There's nothing to sign up for or install.
                         No changes to your pages or CMS.  All you
-                        need is a PayPal or Dwolla account to receive payments.
+                        need to do is register a PayPal or Dwolla account
+                        to receive payments. 
                         </p>
                         <h3><span class="glyphicon glyphicon-ok why" aria-hidden="true" style="color:#1ABC9C"></span> Private</h3>
                         <p>Tipsy is completely private. No Tipsy
@@ -469,6 +472,28 @@
             </div>
          </div>
       </section>
+      <section id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2>About Tipsy</h2>
+              <hr class="heart-primary" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <p>Tipsy was devised by
+              the <a href="//haystack.csail.mit.edu/">Haystack
+                Group</a>.  Funding was provided by
+              the <a href="http://knightfoundation.org/">Knight
+                Foundation</a> under
+              a <a href="http://knightfoundation.org/funding-initiatives/knight-prototype-fund/">prototype
+                fund</a> grant.  Development was carried out
+              by <a href="http://bocoup.com/">Bocoup Software</a>.
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Footer -->
       <footer class="text-center">
          <div class="footer-above">
@@ -499,8 +524,8 @@
                      </ul>
                   </div>
                   <div class="footer-col col-md-4">
-                     <h3>About Tipsy</h3>
-                     <p>Tipsy is a free to use and 
+                     <h3>Free</h3>
+                     <p>Tipsy is free to use and 
                         <a href="https://github.com/haystack/tipsy">open source</a> .
                      </p>
                   </div>
@@ -604,7 +629,7 @@
       <script src="js/jqBootstrapValidation.js"></script> 
       <script src="js/contact_me.js"></script> 
       <!-- Custom Theme JavaScript -->
-      <script src="js/filesaver.js"></script>
+      <script src="js/FileSaver.js"></script>
       <script src="js/tipsy.js"></script> 
 
       <!-- Modal for Download-->
@@ -709,25 +734,13 @@
                   <h4 class="modal-title" id="myModalLabel">tipsy.txt</h4>
                </div>
                <div class="modal-body">
-                  <p>Use this form to generate the tipsy.txt page.</p>
+                  <p>Use this form to generate your tipsy.txt page.</p>
                   <form class="form-horizontal span12">
                      <div class="form-group">
-                        <label class="control-label col-sm-3" for="txtName">Name</label>
+                        <label class="control-label col-sm-3"
+                        for="txtName">Site Name</label>
                         <div class="col-sm-9">
                            <input type="text" class="form-control" id="txtName" placeholder="(optional)" />
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <label class="control-label col-sm-3" for="cacheDuration">Cache Duration</label>
-                        <div class="col-sm-2">
-                           <input type="number" class="form-control" id="cacheDurationNumber" placeholder="3" min ="1" value="1" step="1"/>
-                        </div>
-                        <div class="col-sm-4">
-                           <select class="form-control" id="cacheDurationDuration">
-                              <option value="h">Hours</option>
-                              <option value="d" selected>Days</option>
-                              <option value="w">Weeks</option>
-                           </select>
                         </div>
                      </div>
                      <hr>
@@ -752,9 +765,26 @@
                         </div>
                      </div>
                      </div>
-                     <a class="addMore" href="javascript:void(0)" id="addMore"  style="float:right">Add more...</a>
+                     <a class="addMore" href="javascript:void(0)"
+                     id="addMore"  style="float:right">Add more domains...</a>
                      <br/>
                      <a class="remove" href="javascript:void(0)" id="remove"  style="float:right">Remove</a>
+                     <hr>
+                     <div class="form-group">
+                        <label class="control-label col-sm-3"
+                        for="cacheDuration">(Optional) Cache Duration</label> 
+                        <div class="col-sm-2">
+                           <input type="number" class="form-control" id="cacheDurationNumber" placeholder="3" min ="1" value="1" step="1"/>
+                        </div>
+                        <div class="col-sm-4">
+                           <select class="form-control" id="cacheDurationDuration">
+                              <option value="h">Hours</option>
+                              <option value="d" selected>Days</option>
+                              <option value="w">Weeks</option>
+                           </select>
+                        </div>
+                     </div>
+
                   </form>
                   <button type="button" class="btn btn-primary" id="txtGenerateBtn">Generate</button><!--
                   <hr />
