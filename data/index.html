@@ -136,9 +136,9 @@
                         </p>
                         <h3><span class="glyphicon glyphicon-ok why" aria-hidden="true" style="color:#1ABC9C"></span> Easy for Publishers</h3>
                         <p>There's nothing to sign up for or install.
-                        No changes to your pages or CMS.  All you
-                        need to do is register a PayPal or Dwolla account
-                        to receive payments. 
+                        No changes to your pages or CMS. All you
+                        need to do is register a PayPal or Dwolla account,
+                        or get a Bitcoin wallet address to receive payments. 
                         </p>
                         <h3><span class="glyphicon glyphicon-ok why" aria-hidden="true" style="color:#1ABC9C"></span> Private</h3>
                         <p>Tipsy is completely private. No Tipsy
@@ -259,7 +259,7 @@
                         or <a href="https://www.dwolla.com/">Dwolla</a>
                         account to receive payments, and (2) publish
                         that account's ID in a single <samp>tipsy.txt</samp>
-                        file on your web site.  That's
+                        file on your web site. That's
                         it&mdash;you don't have to change a single
                         page or any step in your CMS workflow.
                         There's nothing to install.
@@ -275,9 +275,9 @@
                         email. For Dwolla you need to <a href="#"
                         data-toggle="modal"
                         data-target="#dwollaKeyInfo">get a key</a>.
-                        Paypal charges transaction fees while Dwolla
+                        PaPpal charges transaction fees while Dwolla
                         does not.  But more users have (and can pay
-                        with) Paypal accounts.  You can use
+                        with) their PayPal accounts.  You can use
                         either <b>or both</b> on your site.
                      </div>
                   </div>
@@ -732,6 +732,13 @@
                               placeholder="kRrCD32hkwH0E7ldn/xeI/WCQKqR2dVPLuQjF6Bu/g4OlMnZa9" />
                         </div>
                      </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-3" for="bitcoinWallet">Bitcoin Wallet Address</label>
+                        <div class="col-sm-9">
+                           <input type="text" class="form-control" id="bitcoinWallet"
+                              placeholder="56aa4626057f4e415444b373f5f9d6aa" />
+                        </div>
+                     </div>
                   </form>
                   <button type="button" class="btn btn-primary" id="linkTagGenerateBtn">Generate</button>
                   <hr />
@@ -775,12 +782,16 @@
                         </div>
                         <div class="form-group">
                            <label class="control-label col-sm-3" for="payPalEmail">Payment Info</label>
-                           <div class="col-sm-4">
+                           <div class="col-sm-3">
                               <input type="email" class="form-control" id="payPalEmail1" placeholder="PayPal Email" />
                            </div>
-                           <div class="col-sm-5">
+                           <div class="col-sm-3">
                               <input type="text" class="form-control" id="dwollaKey1"
                                  placeholder="Dwolla Key" />
+                           </div>
+                           <div class="col-sm-3">
+                              <input type="text" class="form-control" id="bitcoinWallet1"
+                                 placeholder="Bitcoin Wallet Address" />
                            </div>
                         </div>
                      </div>
@@ -924,11 +935,12 @@
                                  &nbsp;&nbsp;&nbsp;3 d<br/>
                                  payment-methods:<br/>
                                  &nbsp;&nbsp;&nbsp;&nbsp;mysite.html:<br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bitcoin: 56aa4626057f4e415444b373f5f9d6aa<br/>
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paypal: me@mail.com<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: kRrCD32hkwH0E7ldn/xeI/WCQKqR <br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: kRrCD32hkwH0E7ldn/xeI/WCQKqR<br/>
                                  &nbsp;&nbsp;&nbsp;&nbsp;_:<br/>
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paypal:someone@else.com<br/>
-                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: H0E7ldH0E7ldKqR/KqRD32hkw <br/>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dwolla: H0E7ldH0E7ldKqR/KqRD32hkw<br/>
                                  </samp>
                               </div>
                               <p>All you need to make sure is to have the colons at the end of each heading and keep the indentation levels consistent. 
