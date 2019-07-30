@@ -15,6 +15,7 @@ $(function() {
         var name = $('#linkTagName').val();
         var paypalEmail = $('#payPalEmail').val();
         var dwollaKey = $('#dwollaKey').val();
+        var bitcoinWallet = $('#bitcoinWallet').val();
 
         var data = ""
         var nameIn = ""
@@ -24,7 +25,7 @@ $(function() {
 
         if (paypalEmail != "") {
             if (!(regex.test(paypalEmail))) {
-                $('#noData').html("<div class='alert alert-warning text-center' id='alertMessage'>Make sure your paypal email is valid.</div>");
+                $('#noData').html("<div class='alert alert-warning text-center' id='alertMessage'>Make sure your PayPal email is valid.</div>");
                 window.setTimeout(function() {
                     $("#alertMessage").fadeTo(500, 0).slideUp(500, function() {
                         $(this).remove();
@@ -33,21 +34,26 @@ $(function() {
                 return
             }
 
-            data += " data-paypal='" + paypalEmail + "'";
+            data += " data-paypal=\"" + paypalEmail + '"';
         }
 
         if (dwollaKey != "") {
-            data += " data-dwolla='" + dwollaKey + "'";
+            data += " data-dwolla=\"" + dwollaKey + '"';
         }
-        var textArea = "<code> &ltlink rel='author'" + nameIn + data + "&gt</code>";
+
+        if (bitcoinWallet != "") {
+            data += " data-bitcoin=\"" + bitcoinWallet + '"';
+        }
+
+        var textArea = '<code>&ltlink rel="author"' + nameIn + data + "&gt</code>";
 
         if (data != "") {
             $('#noData').empty();
-            $('#placeFollowing').html("<p>Place the following in the <samp>HEAD</samp> of your site:</p>");
+            $('#placeFollowing').html("<p>Place the following in the <samp>&lt;head&gt;</samp> of your site:</p>");
             $('#generatedLinkTag').html(textArea);
         } else {
 
-            $('#noData').html("<div class='alert alert-warning text-center' id='alertMessage'>Please make sure you provided at least either PayPal or dwolla information.</div>");
+            $('#noData').html("<div class='alert alert-warning text-center' id='alertMessage'>Please make sure you provide <strong>at least one</strong> payment option.</div>");
 
             window.setTimeout(function() {
                 $("#alertMessage").fadeTo(500, 0).slideUp(500, function() {
@@ -122,7 +128,7 @@ $('#txtBar').click(function(e) {
 
 function makeGroup(number) {
     var i = number.toString();
-    var str = "<div class='groups' id='group" + i + "'><div class='form-group group'><hr><label    class='control-label col-sm-3' for='urlPrefix" + i + "'>URL Prefix " + i + "</label><div class='col-sm-9'><input type='text' class='form-control' id='urlPrefix" + i + "' placeholder='(leave blank to cover your entire domain)' /></div></div><div class='form-group'><label class='control-label col-sm-3' for='payPalEmail'>Payment Info " + i + "</label><div class='col-sm-4'><input type='email' class='form-control' id='payPalEmail" + i + "' placeholder='PayPal Email' /></div><div class='col-sm-5'><input type='text' class='form-control' id='dwollaKey" + i + "' placeholder='Dwolla Key' /></div></div></div>";
+    var str = "<div class='groups' id='group" + i + "'><div class='form-group group'><hr><label    class='control-label col-sm-3' for='urlPrefix" + i + "'>URL Prefix " + i + "</label><div class='col-sm-9'><input type='text' class='form-control' id='urlPrefix" + i + "' placeholder='(leave blank to cover your entire domain)' /></div></div><div class='form-group'><label class='control-label col-sm-3' for='payPalEmail'>Payment Info " + i + "</label><div class='col-sm-3'><input type='email' class='form-control' id='payPalEmail" + i + "' placeholder='PayPal Email' /></div><div class='col-sm-3'><input type='text' class='form-control' id='dwollaKey" + i + "' placeholder='Dwolla Key' /></div><div class='col-sm-3'><input type='text' class='form-control' id='bitcoinWallet" + i + "' placeholder='Bitcoin Wallet Address' /></div></div></div>";
     return str
 
 }
@@ -165,6 +171,7 @@ function generateTxtOutput() {
         }
         var payPal = $("#payPalEmail" + (i + 1).toString()).val();
         var dwolla = $("#dwollaKey" + (i + 1).toString()).val();
+        var bitcoin = $("#bitcoinWallet" + (i + 1).toString()).val();
         if (payPal != "" && !(regex.test(payPal))) {
             $('#noDataTxt').html("<div class='alert alert-warning text-center' id='alertMessage'>Please make sure the PayPal email you provide for the Payment Info " + num + " is correct.</div>");
 
@@ -176,7 +183,7 @@ function generateTxtOutput() {
             return;
 
         }
-        if (payPal != "" || dwolla != "") {
+        if (payPal != "" || dwolla != "" || bitcoin != "") {
             outString += "payment-methods:<br/>"
             isThereAnyPaymentInfo = true;
             break
@@ -201,6 +208,7 @@ function generateTxtOutput() {
         for (var i = 0; i < groups.length; i++) {
             var payPal = $("#payPalEmail" + (i + 1).toString()).val();
             var dwolla = $("#dwollaKey" + (i + 1).toString()).val();
+            var bitcoin = $("#bitcoinWallet" + (i + 1).toString()).val();
 
             var num;
             if (i == 0) {
@@ -229,12 +237,14 @@ function generateTxtOutput() {
             }
             outString += "&nbsp;&nbsp;" + currUrlPrefix + ":&nbsp;<br/>"
 
-            if (payPal != "") {
-                outString += "&nbsp;&nbsp;&nbsp;&nbsp;paypal: " + payPal + "<br/>"
+            if (bitcoin != "") {
+                outString += "&nbsp;&nbsp;&nbsp;&nbsp;bitcoin: " + bitcoin + "<br/>"
             }
-
             if (dwolla != "") {
                 outString += "&nbsp;&nbsp;&nbsp;&nbsp;dwolla: " + dwolla + "<br/>"
+            }
+            if (payPal != "") {
+                outString += "&nbsp;&nbsp;&nbsp;&nbsp;paypal: " + payPal + "<br/>"
             }
         }
     }
